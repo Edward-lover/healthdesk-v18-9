@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - HealthDesk</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- ADMIN HEADER -->
+    <!-- ============================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <img src="icon-192.png" alt="HealthDesk Logo">
+            <span>HEALTHDESK</span>
+        </div>
+
+        <div class="nav-right">
+            <span class="admin-title">Clinic Administrator</span>
+
+            <button
+                type="button"
+                id="adminLogoutBtn"
+                class="logout-btn">
+                Log Out
+            </button>
+        </div>
+
+    </header>
+
+
+    <!-- ============================= -->
+    <!-- ADMIN MAIN CONTENT -->
+    <!-- ============================= -->
+
+    <main class="admin-container">
+
+        <div class="admin-header">
+
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p>Manage school clinic appointments.</p>
+            </div>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- STATISTICS -->
+        <!-- ============================= -->
+
+        <section class="admin-stats">
+
+            <div class="admin-stat-card">
+                <h3>Total Appointments</h3>
+                <p id="adminTotal">0</p>
+            </div>
+
+            <div class="admin-stat-card">
+                <h3>Pending</h3>
+                <p id="adminPending">0</p>
+            </div>
+
+            <div class="admin-stat-card">
+                <h3>Approved</h3>
+                <p id="adminApproved">0</p>
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- APPOINTMENTS -->
+        <!-- ============================= -->
+
+        <section class="admin-appointments-section">
+
+            <div class="section-title">
+                <h2>Appointments</h2>
+                <p>View and manage student clinic appointments.</p>
+            </div>
+
+            <div
+                id="adminAppointments"
+                class="admin-appointments">
+
+                <p class="empty-message">
+                    No appointments available.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- SUPABASE -->
+    <!-- ============================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <!-- ============================= -->
+    <!-- MAIN JAVASCRIPT -->
+    <!-- ============================= -->
+
+    <script src="script.js"></script>
+
+
+    <!-- ============================= -->
+    <!-- SERVICE WORKER -->
+    <!-- ============================= -->
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./service-worker.js");
+        }
+    </script>
+
+</body>
+
+</html>
